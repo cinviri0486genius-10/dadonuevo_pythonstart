@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado de Actividades Python en Google Colab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🐍 ¡Dado de Desafíos Python! 🐍</h1>
+    <p>Haz clic en el botón para lanzar el dado y descubrir tu próximo reto de código en Google Colab.</p>
+
+    <!-- Escena contenedora para la perspectiva 3D -->
+    <div class="escena-3d">
+        <div class="cubo" id="cubo">
+            <!-- Cara 1: Print -->
+            <div class="cara cara-1">
+                <div class="contenido-cara">
+                    <span class="numero">1</span>
+                    <p>Usa la función print() para presentarte 💬</p>
+                </div>
+            </div>
+            <!-- Cara 2: Variables -->
+            <div class="cara cara-2">
+                <div class="contenido-cara">
+                    <span class="numero">2</span>
+                    <p>Crea variables con tu nombre, edad y país 🪙</p>
+                </div>
+            </div>
+            <!-- Cara 3: Input -->
+            <div class="cara cara-3">
+                <div class="contenido-cara">
+                    <span class="numero">3</span>
+                    <p>Pide datos con input() y saluda al usuario ⌨️</p>
+                </div>
+            </div>
+            <!-- Cara 4: Condicionales -->
+            <div class="cara cara-4">
+                <div class="contenido-cara">
+                    <span class="numero">4</span>
+                    <p>Usa if y else para ver si un número es mayor ⚖️</p>
+                </div>
+            </div>
+            <!-- Cara 5: Bucles -->
+            <div class="cara cara-5">
+                <div class="contenido-cara">
+                    <span class="numero">5</span>
+                    <p>Crea un ciclo for o while que cuente hasta 10 🔄</p>
+                </div>
+            </div>
+            <!-- Cara 6: Reto Libre -->
+            <div class="cara cara-6">
+                <div class="contenido-cara">
+                    <span class="numero">6</span>
+                    <p>¡Reto Libre! Programa lo que tú quieras ✨</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-lanzar" id="btnLanzar" onclick="lanzarDado()">🎲 Lanzar Dado 🎲</button>
+
+    <div class="pantalla-reto" id="pantallaReto">¡Haz girar el dado de programación!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

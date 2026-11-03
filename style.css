@@ -1,0 +1,134 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1E1E1E; /* Gris oscuro estilo editor de código (VS Code/Colab Dark) */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #306998; /* Azul Python original */
+    text-shadow: 2px 2px #FFD43B; /* Sombra Amarilla Python */
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #BBBBBB;
+}
+
+/* Espacio y perspectiva para el objeto 3D */
+.escena-3d {
+    width: 200px;
+    height: 200px;
+    margin: 60px auto;
+    perspective: 800px;
+}
+
+/* Contenedor del cubo giratorio */
+.cubo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    transition: transform 3s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* Propiedades comunes de las caras */
+.cara {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 4px solid white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    backface-visibility: visible;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenido interno de la actividad */
+.contenido-cara {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.numero {
+    font-size: 2.8rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contenido-cara p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Paleta de colores basada en la marca Python (Eje de 100px para el cubo) */
+.cara-1 { background-color: #306998; transform: rotateY(0deg) translateZ(100px); }     /* Azul Principal */
+.cara-2 { background-color: #FFD43B; transform: rotateY(180deg) translateZ(100px); }   /* Amarillo Python (Texto oscuro) */
+.cara-3 { background-color: #4B8BBE; transform: rotateY(-90deg) translateZ(100px); }    /* Azul Claro */
+.cara-4 { background-color: #FFE873; transform: rotateY(90deg) translateZ(100px); }     /* Amarillo Claro (Texto oscuro) */
+.cara-5 { background-color: #234A6B; transform: rotateX(90deg) translateZ(100px); }     /* Azul Oscuro */
+.cara-6 { background-color: #646464; transform: rotateX(-90deg) translateZ(100px); }    /* Gris Tecnológico */
+
+/* Ajustes de contraste para las caras amarillas */
+.cara-2 .contenido-cara, .cara-4 .contenido-cara { color: #111; text-shadow: none; }
+.cara-2 .contenido-cara p, .cara-4 .contenido-cara p { color: #111; }
+
+/* Botón de control estilo Python/Colab */
+.btn-lanzar {
+    background-color: #306998;
+    color: white;
+    border: 2px solid #4B8BBE;
+    padding: 15px 35px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px #1A3A54;
+    transition: 0.1s ease;
+}
+
+.btn-lanzar:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px #1A3A54;
+}
+
+.btn-lanzar:disabled {
+    background-color: #444;
+    border-color: #555;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Panel inferior que muestra el resultado de la celda */
+.pantalla-reto {
+    max-width: 550px;
+    background-color: #2D2D2D;
+    color: #FFD43B; /* Texto amarillo para destacar el reto */
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace; /* Tipografía estilo código */
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid #306998;
+    box-shadow: 0 6px rgba(0,0,0,0.4);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+}
